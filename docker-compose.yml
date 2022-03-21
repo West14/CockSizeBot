@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  bot:
+    build: CockSizeBot
+    restart: unless-stopped
+    volumes:
+      - cock_bot/appsettings.json:/app/appsettings.json
+
+volumes:
+  cock_bot:
+    driver: 'local'
