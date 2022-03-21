@@ -2,11 +2,7 @@ version: '3.9'
 
 services:
   bot:
-    build: CockSizeBot
+    environment:
+      - BotConfig__token=${BotConfig__token}
+    build: .
     restart: unless-stopped
-    volumes:
-      - cock_bot/appsettings.json:/app/appsettings.json
-
-volumes:
-  cock_bot:
-    driver: 'local'
